@@ -12,12 +12,12 @@ const UserProfile = ({ status, statusHandler}) => {
             </div>
         </div>
         <div className="userActivity"> {/* user activity */}
-          <button className={status === 'dailyActive' ? 'dailyActive' : ''}
-           onClick={()=>statusHandler('dailyActive')}>Daily</button>
-          <button className={status === 'monthlyActive' ? 'monthlyActive' : ''}
-          onClick={()=>statusHandler('monthlyActive')}>Monthly</button>
-          <button className={status === 'weeklyActive' ? 'weeklyActive' : ''}
-          onClick={()=>statusHandler('weeklyActive')}>Weekly</button>
+          <button className={status === 'daily' ? 'daily' : ''}
+           onClick={()=>statusHandler('daily')}>Daily</button>
+          <button className={status === 'monthly' ? 'monthly' : ''}
+          onClick={()=>statusHandler('monthly')}>Monthly</button>
+          <button className={status === 'weekly' ? 'weekly' : ''}
+          onClick={()=>statusHandler('weekly')}>Weekly</button>
         </div>
         </div>
      );

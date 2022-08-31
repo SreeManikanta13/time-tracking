@@ -8,7 +8,7 @@ function App() {
 
   const [loading, setLoading] = useState(true); //state for loader
   const [trackData, setTrackData] = useState([]);//data fetched from API
-  const [status, setStatus] = useState('dailyActive');//status
+  const [status, setStatus] = useState('daily');//status
 
   //Fetch time tracking data from API
   useEffect(() => {
