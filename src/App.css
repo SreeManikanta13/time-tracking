@@ -1,0 +1,348 @@
+:root {
+    --primary-blue: hsl(246, 80%, 60%);
+    --light-red-work : hsl(15, 100%, 70%);
+    --soft-blue : hsl(195, 74%, 62%);
+    --light-red-study: hsl(348, 100%, 68%);
+    --lime-green : hsl(145, 58%, 55%);
+    --violet : hsl(264, 64%, 52%);
+    --soft-orange : hsl(43, 84%, 65%);
+    --very-dark-blue: hsl(226, 43%, 10%);
+    --dark-blue: hsl(235, 46%, 20%);
+    --desaturated-blue: hsl(235, 45%, 61%);
+    --pale-blue: hsl(236, 100%, 87%);
+    --body-font-size:18px;
+}
+
+@font-face {
+    font-family: rubik-regular;
+    src: url(./fonts/Rubik-Regular.ttf);
+}
+
+@font-face {
+    font-family: rubik-bold;
+    src: url(./fonts/Rubik-Bold.ttf);
+}
+
+@font-face {
+    font-family: rubik-light;
+    src: url(./fonts/Rubik-Light.ttf);
+}
+
+body{
+    background: var(--very-dark-blue);
+    color:white;
+    font-family: rubik-regular;
+}
+
+h1{
+    font-family: rubik-light;
+    font-size: 45px;
+    line-height: 50px;
+    margin: 0;
+}
+
+h2{
+    font-size: 40px;
+    line-height: 45px;
+    font-weight: 300;
+}
+
+h4{
+    font-family: rubik-regular;
+}
+
+p{
+    font-family: rubik-light;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+.container{
+    display: grid;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    grid-template-columns: repeat(4,1fr);
+    grid-gap:35px;
+}
+
+.userProfile{
+    grid-row: 1/3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--dark-blue);
+    border-radius: 25px;
+}
+
+.userActivity{
+    display: flex;
+    flex-flow: column;
+    background-color: var(--dark-blue);
+    border-radius: 25px;
+    height: 25%;
+    padding: 30px;
+    align-items: flex-start;
+}
+
+.activityWrapper{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--light-red-work);
+    border-radius: 25px;
+}
+
+.activityImageWrapper{
+    justify-content: flex-end;
+    display: flex;
+    height: 50px;
+}
+
+.activityImageWrapper img{
+    height: 50px;
+}
+
+.activityInfo{
+    background-color: var(--dark-blue);
+    border-radius: 25px;
+    padding: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.activityInfo:hover{
+    background-color: var(--desaturated-blue);
+}
+
+.ellipsisImage{
+    position: absolute;
+    top:45px;
+    right: 30px
+}
+
+.userInfo{
+    background-color: var(--primary-blue);
+    border-radius: 25px;
+    height: 75%;
+    align-items: flex-start;
+}
+
+.userInfo img{
+    width: 30%;
+    border-radius: 50%;
+    border: 3px solid #fff;
+    margin: 30px;
+}
+
+.userActivity button{
+    background: transparent;
+    border: none;
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--pale-blue);
+    font-family: rubik-light;
+    cursor: pointer;
+}
+
+.userActivity button:hover{
+    color: white;
+}
+
+.userInfo-text{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.userActivity button.dailyActive, .userActivity button.monthlyActive, .userActivity button.weeklyActive{
+    color: white;
+}
+
+@keyframes spinner {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  
+.loading {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto;
+    margin-top: 50px;
+    border-radius: 50%;
+    border: 3px solid #ccc;
+    border-top-color: var(--very-dark-blue);;
+    animation: spinner 0.6s linear infinite;
+}
+
+.Work .bgImage, .Play .bgImage, .Study .bgImage, .Exercise .bgImage, .Social .bgImage, .Self.Care .bgImage{
+    width: 110px;
+    background-repeat: no-repeat;
+  }
+
+  .Work{
+    background-color: var(--light-red-work);
+  }
+
+  .Work .bgImage{
+    background-image: url(./images/icon-work.svg);
+  }
+
+  .Play{
+    background-color: var(--soft-blue);
+  }
+
+  .Play .bgImage{
+    background-image: url(./images/Play.svg);
+  }
+
+  .Study{
+    background-color: var(--light-red-study);
+  }
+
+  .Study .bgImage{
+    background-image: url(./images/icon-study.svg);
+  }
+
+  .Exercise{
+    background-color: var(--lime-green);
+  }
+
+  .Exercise .bgImage{
+    background-image: url(./images/icon-exercise.svg);
+  }
+
+  .Social{
+    background-color: var(--violet);
+  }
+
+  .Social .bgImage{
+    background-image: url(./images/icon-social.svg);
+  }
+
+  .Self.Care{
+    background-color: var(--soft-orange);
+  }
+
+  .Self.Care .bgImage{
+    background-image: url(./images/icon-self-care.svg);
+  }
+
+@media only screen and (max-width: 1024px){
+    .container{
+        display: flex;
+        flex-flow: column;
+        grid-template-columns: unset;
+        transform: unset;
+        position: unset;
+        left: 0;
+        top: 0;
+        width: auto;
+        padding-top: 75px;
+        padding-bottom: 40px;
+    }
+
+    .userProfile, .activityWrapper{
+        width:600px;
+    }
+
+    .userInfo{
+        display: flex;
+        padding: 20px;
+    }
+
+    .userInfo img {
+        width: 20%;
+        margin: auto 30px;
+    }
+
+    .userInfo-text {
+        padding: 30px 0;
+        margin: 0;
+    }
+
+    h1{
+        font-size: 30px;
+        line-height: 35px;
+        font-weight: 100;
+    }
+
+    .userActivity{
+        justify-content: space-around;
+        flex-flow: row;
+    }
+
+    .activityInfo{
+        padding: 35px;
+    }
+
+    .ellipsisImage {
+        right: 36px;
+    }
+
+    .activityInfo h4{
+        font-size: 25px;
+        margin-bottom: 0;
+        font-family: rubik-light;
+    }
+
+    .activityCard{
+        display: flex;
+        flex-flow: row;
+        justify-content: space-between;
+    }
+
+    .activityCard h2{
+        font-family: rubik-light;
+    }
+
+    .activityCard p{
+        font-size: 25px;
+        line-height: 30px;
+        padding-top: 13px;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .userProfile, .activityWrapper{
+        width:300px;
+    }
+
+    .activityInfo{
+        padding: 20px;
+    }
+
+    .ellipsisImage {
+        right: 30px;
+    }
+
+    .activityCard h2{
+        font-size: 20px;
+        line-height: 25px;
+    }
+
+    .activityCard p{
+        font-size: 18px;
+        line-height: 20px;
+        padding-top: 0;
+    }
+
+    .activityInfo h4{
+        font-size: 20px;
+    }
+
+    .userInfo{
+        padding: 0px;
+    }
+}
