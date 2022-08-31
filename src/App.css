@@ -165,7 +165,7 @@ p{
     margin-right: 30px;
 }
 
-.userActivity button.daily, .userActivity button.monthlyActive, .userActivity button.weekly{
+.userActivity button.daily, .userActivity button.monthly, .userActivity button.weekly{
     color: white;
 }
 
